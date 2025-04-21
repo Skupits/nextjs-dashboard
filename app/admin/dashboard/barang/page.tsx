@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Search from "./search";
-import { products } from "../../lib/placeholder-data";
+import { products } from "../../../lib/placeholder-data";
 import ProductCard from "./table";
 
 export default function KelolaInformasiBarangPage() {

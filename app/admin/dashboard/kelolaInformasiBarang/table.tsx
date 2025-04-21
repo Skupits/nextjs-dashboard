@@ -1,7 +1,7 @@
 "use client";
 
 import { Eye, Pencil, Trash2 } from "lucide-react";
-import { formatPrice } from "../../../lib/FormatPrice";
+import { formatPrice } from "../../../../lib/FormatPrice";
 import { useRouter } from "next/navigation";
 
 interface products {
