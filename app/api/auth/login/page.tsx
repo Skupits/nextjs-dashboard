@@ -74,7 +74,7 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import Image from "next/image";
-import Header from "../../components/header";
+import Header from "../../../../components/header";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
