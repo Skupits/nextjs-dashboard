@@ -49,11 +49,17 @@ const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
-      if ("email" in token) {
-        session.user.email = token.email;
+      if (!session.user) {
+        session.user = {}; // inisialisasi biar nggak undefined
       }
+    
+      if ("email" in token) {
+        session.user.email = token.email as string;
+      }
+    
       return session;
-    },
+    }
+    
   },
   pages: {
     signIn: "/login",
