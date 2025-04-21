@@ -1,7 +1,7 @@
 "use client";
 
 import { Eye, Pencil } from "lucide-react";
-import { formatPrice } from "../../../lib/FormatPrice";
+import { formatPrice } from "../../../../lib/FormatPrice";
 
 interface TableItem {
   id: number;

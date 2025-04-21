@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { user } from "../lib/placeholder-data";
+import { user } from "../../lib/placeholder-data";
 
 export default function DashboardHeader() {
   if (!user) return null; 

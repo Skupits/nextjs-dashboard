@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FiPlusCircle } from "react-icons/fi";
 import Search from "../search";
 import Table from "./table";
-import { transactions, products } from "../../lib/placeholder-data";
+import { transactions, products } from "../../../lib/placeholder-data";
 
 export default function KelolaTransaksiPage() {
   const [search, setSearch] = useState("");

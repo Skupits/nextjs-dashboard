@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { FiPlusCircle } from "react-icons/fi";
 import Search from "../search";
 import Table from "./table";
-import { products } from "../../lib/placeholder-data";
+import { products } from "../../../lib/placeholder-data";
 
 export default function KelolaInformasiBarangPage() {
   const router = useRouter();
