@@ -1,6 +1,8 @@
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { Session } from "next-auth";
+import { JWT } from "next-auth/jwt";
 
 const authOptions: NextAuthOptions = {
   session: {
@@ -23,7 +25,6 @@ const authOptions: NextAuthOptions = {
           placeholder: "password",
         },
       },
-
       async authorize(credentials) {
         const { email, password } = credentials as {
           email: string;
@@ -41,14 +42,13 @@ const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    jwt({ token, account, profile, user }) {
+    jwt({ token, account, user }) {
       if (account?.provider === "credentials") {
         token.email = user.email;
       }
       return token;
     },
-
-    async session({ session, token }: any) {
+    async session({ session, token }: { session: Session; token: JWT }) {
       if ("email" in token) {
         session.user.email = token.email;
       }
