@@ -14,25 +14,27 @@ export default function RegisterPage() {
   const router = useRouter();
 
   const handleRegister = async () => {
-    // Simulasi pengiriman data register (bisa dihubungkan ke API kamu)
     try {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, email, password }),
       });
-
+  
       const data = await res.json();
-
+  
       if (!res.ok) throw new Error(data.message || "Registrasi gagal");
-
+  
       alert("Registrasi berhasil! Silakan login.");
       router.push("/login");
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert("Terjadi kesalahan saat registrasi.");
+      }
     }
-  };
-
+  };  
   return (
     <>
     <Header/>
