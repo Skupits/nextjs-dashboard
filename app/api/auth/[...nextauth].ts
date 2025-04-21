@@ -49,16 +49,13 @@ const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
-      if (!session.user) {
-        session.user = {}; // inisialisasi biar nggak undefined
-      }
-    
-      if ("email" in token) {
-        session.user.email = token.email as string;
-      }
-    
+      // Pastikan session.user tidak undefined
+      session.user = {
+        ...(session.user || {}),
+        email: token.email as string,
+      };
       return session;
-    }
+    }    
     
   },
   pages: {
