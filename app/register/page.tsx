@@ -34,7 +34,7 @@ export default function RegisterPage() {
         alert("Terjadi kesalahan saat registrasi.");
       }
     }
-  };  
+  };
   return (
     <>
     <Header/>
