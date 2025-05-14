@@ -1,10 +1,10 @@
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import Header from "../components/header"
+import Footer from '../components/Footer'
 
 export default function ContactPage() {
     return (
         <>
-            <Navbar />
+            <Header />
             <div className="p-10 max-w-xl mx-auto">
                 <h1 className="text-2xl font-bold mb-4">Hubungi Kami</h1>
                 <form className="space-y-4">

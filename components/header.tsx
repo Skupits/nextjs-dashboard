@@ -56,6 +56,9 @@ export default function Header() {
           <Link href="/team" className="hover:underline">
             Our Teams
           </Link>
+          <Link href="/contact" className="hover:underline">
+            Contact
+          </Link>
         </nav>
 
         {/* Icons */}
